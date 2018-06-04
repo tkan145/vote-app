@@ -15,6 +15,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'dashboard'],function(){
+
+  Route::get('',[
+    'uses'  => 'VotesController@getIndex',
+    'as'    => 'dashboard.index'
+  ]);
+});
+
+
+Route::get('new-vote', [
+    'uses'  => 'VotesController@getCreate',
+    'as'    => 'admin.create'
+  ]);
+
+Route::post('new-vote',[
+    'uses'  => 'VotesController@postCreate',
+    'as'    => 'admin.create'
+  ]);
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
