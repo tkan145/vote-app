@@ -1,0 +1,1 @@
+<div class="py-2 text-center bg-dark" id="copyright text-right">© Copyright 2018 Mark Tran </div>
