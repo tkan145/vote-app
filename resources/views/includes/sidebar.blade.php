@@ -9,7 +9,7 @@
   </h5>
   <ul class="nav flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="/admin">
+      <a class="nav-link" href="/dashboard">
         <span data-feather="home"></span>
         Home <span class="sr-only">(current)</span>
       </a>
