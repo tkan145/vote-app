@@ -24,7 +24,6 @@
           <span class="caret ml-2"></span>{{ Auth::user()->name }}
         </div>
         <div class="dropdown-divider c-blue"></div>
-          <a class="dropdown-item" href="{{ route('other.about')}}">  {{ __('About') }}</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault();
