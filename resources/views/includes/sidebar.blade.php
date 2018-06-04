@@ -1,7 +1,7 @@
 <div class="sidebar-sticky">
   <div class="row mt-5 align-center text-center">
     <div class="col-12">
-      <a class="btn btn-block btn-primary" href="/admin/create-vote">Create New</a>
+      <a class="btn btn-block btn-primary" href="/votes/create">Create New</a>
     </div>
   </div>
   <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-3 mb-1 text-muted">

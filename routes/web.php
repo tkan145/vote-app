@@ -23,16 +23,18 @@ Route::group(['prefix' => 'dashboard'],function(){
   ]);
 });
 
+Route::group(['prefix' => 'votes'],function(){
 
-Route::get('new-vote', [
+  Route::get('create', [
     'uses'  => 'VotesController@getCreate',
-    'as'    => 'admin.create'
+    'as'    => 'votes.create'
   ]);
 
-Route::post('new-vote',[
+Route::post('create',[
     'uses'  => 'VotesController@postCreate',
-    'as'    => 'admin.create'
+    'as'    => 'votes.create'
   ]);
+});
 
 Auth::routes();
 
