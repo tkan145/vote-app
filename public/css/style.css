@@ -1,5 +1,5 @@
 html, body {
-  background-color: #fff;
+  background-color: #F1F8FF;
   color: #636b6f;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
@@ -50,9 +50,28 @@ html, body {
 }
 
 .bd-card{
-  padding: 30px;
   margin: 20px 0;
   background-color: white;
   border: 1px solid rgba(90,122,190,.08);
   box-shadow: 0 3px 0 0 rgba(90,122,190,.12)
+}
+
+.bd-card-header{
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(90,122,190,.08);
+  color: #448AFF;
+  font-size: 20px;
+}
+
+.bd-card-header-title{
+  color: #448AFF;
+}
+
+.bd-card-body{
+  padding: 30px;
+}
+
+.bg-blue{
+  background-color: #F1F8FF;
 }

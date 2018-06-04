@@ -7,7 +7,7 @@
     <header>
     @include('includes.header')
   </header>
-  <div class="container flex-center position-ref full-height">
+  <div class="container position-ref full-height mt-5">
     <main>
       @yield('content')
     </main>
