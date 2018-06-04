@@ -9,8 +9,15 @@ use App\Vote;
 class VotesController extends Controller
 {
     public function getIndex(){
-        $votes = Vote::orderBy('created_at','desc')->get();
+        // Only get what belong to current user
+        $votes = Vote::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->paginate(10);
         return view('dashboard.index',['votes' => $votes]);
+    }
+
+    public function getVoteByID($id){
+        $vote = Vote::find($id);
+        return view('votes.details',['vote' => $vote, 'voteId' => $id]);
+        
     }
 
     public function getCreate(){

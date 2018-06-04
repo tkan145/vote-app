@@ -6,12 +6,20 @@
     <h2>Index</h2>
   </div>
   <div class="row justify-content-center">
+    @if($votes->isEmpty())
+    <div class="col-md-10 bd-card">
+      <div class="bd-card-body">
+        <p>You have not created any polls</p>
+      </div>
+    </div>
+    @else
+
     @foreach( $votes as $vote)
     <div class="col-md-10 bd-card">
       <div class="bd-card-body">
         <div class="row">
           <div class="col-md-8">
-            <a href=""><h2 class="post-title">{{ $vote->title}}</h2></a>
+            <a href="{{ route('votes.show',['id' => $vote->id])}}"><h2 class="post-title">{{ $vote->title}}</h2></a>
             @if( $vote->description != "")
               <div class="col-md-10">
                 <p>{{ $vote->description}}</p>
@@ -26,6 +34,7 @@
       </div>
     </div>
     @endforeach
+    @endif
   </div>
 </div>
 @endsection

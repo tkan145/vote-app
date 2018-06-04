@@ -9,7 +9,7 @@ body {
 }
 
 .full-height {
-  height: 85vh;
+  /* height: 85vh; */
 }
 
 .flex-center {
@@ -51,7 +51,7 @@ body {
 }
 
 .bd-card {
-  margin: 20px 0;
+  margin: 10px 0;
   background-color: white;
   border: 1px solid rgba(90, 122, 190, 0.08);
   box-shadow: 0 3px 0 0 rgba(90, 122, 190, 0.12);

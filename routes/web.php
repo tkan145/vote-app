@@ -30,10 +30,16 @@ Route::group(['prefix' => 'votes'],function(){
     'as'    => 'votes.create'
   ]);
 
-Route::post('create',[
-    'uses'  => 'VotesController@postCreate',
-    'as'    => 'votes.create'
+  Route::post('create',[
+      'uses'  => 'VotesController@postCreate',
+      'as'    => 'votes.create'
+    ]);
+
+  Route::get('{vote_id}',[
+    'uses'  => 'VotesController@getVoteByID',
+    'as'    => 'votes.show'
   ]);
+
 });
 
 Auth::routes();
