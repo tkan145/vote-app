@@ -44,4 +44,9 @@ Route::group(['prefix' => 'votes'],function(){
 
 Auth::routes();
 
+Route::get('/redirectGoogle','SocialAuthGoogleController@redirect');
+Route::get('/callbackGoogle','SocialAuthGoogleController@callback');
+Route::get('/redirectLinkedIn','SocialAuthLinkedInController@redirect');
+Route::get('/callbackLinkedIn','SocialAuthLinkedInController@callback');
+
 

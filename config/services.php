@@ -35,4 +35,16 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+      'client_id' => 'xxxx',
+      'client_secret' => 'xxxx',
+      'redirect'  => 'http://localhost:8000/callback'
+    ],
+
+    'linkedin'  => [
+      'client_id' => 'xxxx',
+      'client_secret' => 'xxxx',
+      'redirect'  => 'http://localhost:8000/callback'
+    ]
+
 ];
