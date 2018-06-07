@@ -42,7 +42,7 @@ class VotesController extends Controller
             'user_id'       => $user->id,
             'vote_id'       => strtoupper(str_random(10)),
             'description'   => "",
-            'status'        => 'Open',
+            'status'        => 'Public',
         ]);
 
         $vote->save();
@@ -52,9 +52,8 @@ class VotesController extends Controller
 
     // Get edit from
     public function getEdit($id){
-        // $vote = Vote::find($id);
-        //return view('votes.edit',['vote' => $vote,'voteId' => $id]);
-        return view('votes.create');
+        $vote = Vote::find($id);
+        return view('votes.edit',['vote' => $vote,'voteId' => $id]);
     }
 
     public function postUpdate(Request $request){

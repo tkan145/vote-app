@@ -18,7 +18,7 @@
     <li class="nav-item">
       <a class="nav-link" href="/create-vote">
         <span data-feather="home"></span>
-        Results <span class="sr-only">(current)</span>
+        Archive <span class="sr-only">(current)</span>
       </a>
     </li>
   </ul>

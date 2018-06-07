@@ -26,7 +26,13 @@
       <div class="bd-card-body">
         <div class="row">
           <div class="col-md-7">
+            @if($vote->status == 'Public')
+              <span class="badge badge-success h6">Public</span>
+            @elseif($vote->status == 'Private')
+              <span class="badge badge-secondary h6">Private</span>
+            @endif
             <h2 class="post-title">{{ $vote->title}}</h2>
+
             @if( $vote->description != "")
               <div class="col-md-10">
                 <p>{{ $vote->description}}</p>
