@@ -33,14 +33,8 @@
 
             <div class="row mb-5">
               <div class="col-md-5 mb-3">
-                <label for="country">Day</label>
-                <select class="custom-select d-block w-100" id="country" >
-                  <option value="">Choose...</option>
-                  <option>United States</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid country.
-                </div>
+                <label for="date">Day</label>
+                <input type="text" class="form-control" data-date-format="dd/mm/yyyy" id="date" name="date" />
               </div>
 
               <div class="col-md-2 mb-3">
