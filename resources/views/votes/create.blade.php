@@ -9,7 +9,7 @@
     <div class="col-md-10 bd-card">
       <div class="bd-card-body">
 
-        <form class="needs-validation" action="{{ route('votes.create')}}" method="post">
+        <form id="create-form" class="needs-validation" action="{{ route('votes.create')}}" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label>Title</label>
               <div class="row">
@@ -17,19 +17,20 @@
                       <input type="text" class="form-control" id="title" name="title" placeholder="" value="" required>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <button type="button" class="btn btn-outline-primary">Add Description</button>
+                    <button type="button" class="btn btn-outline-primary btn-add-description">Add Description</button>
                   </div>
                 </div>
             </div>
 
-            <div class="form-group">
+            <!-- Dynamic generate by jquery
+              <div class="form-group">
               <label>Description</label>
               <div class="row">
                   <div class="col-md-8 mb-3">
                       <input type="text" class="form-control" id="description" name="description" placeholder="" value="">
                   </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row mb-5">
               <div class="col-md-5 mb-3">
@@ -75,18 +76,30 @@
                 <label>Options</label>
                 <div class="row">
                     <div class="col-md-8 mb-3">
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="">
+                        <input type="text" class="form-control option-fields" name="options[]" id="" placeholder="" value="">
                     </div>
                     <div class="col-md-4 mb-3">
-                      <button type="button" class="btn btn-outline-primary">Add new option</button>
+                      <button type="button" class="btn btn-outline-primary btn-add-option">Add new option</button>
                     </div>
                 </div>
+            </div>
+
+             <!-- The option field template containing an option field and a Remove button -->
+            <div class="form-group d-none" id="optionTemplate">
+              <div class="row">
+                <div class="col-md-8 mb-3">
+                  <input type="text" class="form-control option-fields" name="options[]" id="" placeholder="" value="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <button type="button" class="btn btn-danger btn-remove-option">Remove</button>
+                </div>
+              </div>
             </div>
 
             <hr class="mb-4">
             <div class="form-group">
               <h4>Upload attachments</h4>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              <input type="file" class="form-control-file" name="file" id="file" accept="image/*" multiple>
             </div>
             {{ csrf_field() }}
             <button type="submit" class="btn btn-primary">Save</button>
