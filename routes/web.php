@@ -31,14 +31,29 @@ Route::group(['prefix' => 'votes'],function(){
   ]);
 
   Route::post('create',[
-      'uses'  => 'VotesController@postCreate',
-      'as'    => 'votes.create'
-    ]);
+    'uses'  => 'VotesController@postCreate',
+    'as'    => 'votes.create'
+  ]);
 
-  Route::get('{vote_id}',[
+  Route::get('show/{vote_id}',[
     'uses'  => 'VotesController@getVoteByID',
     'as'    => 'votes.show'
   ]);
+
+  Route::get('edit/{vote_id}',[
+    'uses'  => 'VotesController@getEdit',
+    'as'    => 'votes.edit'
+  ]);
+
+  Route::get('delete/{vote_id}',[
+    'uses'  => 'VotesController@getDelete',
+    'as'    => 'votes.delete'
+  ]);
+
+  // Route::get('/{vote_id}',[
+  //   'uses'  => 'VotesController@getEdit',
+  //   'as'    => 'votes.show'
+  // ]);
 
 });
 

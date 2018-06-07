@@ -5,6 +5,13 @@
   <div class=" text-center">
     <h2>Index</h2>
   </div>
+  @if(Session::has('info'))
+  <div class="row">
+    <div class="col-md-12">
+      <p class="alert alert-info">{{ Session::get('info') }}</p>
+    </div>
+  </div>
+  @endif
   <div class="row justify-content-center">
     @if($votes->isEmpty())
     <div class="col-md-10 bd-card">
@@ -18,17 +25,18 @@
     <div class="col-md-10 bd-card">
       <div class="bd-card-body">
         <div class="row">
-          <div class="col-md-8">
-            <a href="{{ route('votes.show',['id' => $vote->id])}}"><h2 class="post-title">{{ $vote->title}}</h2></a>
+          <div class="col-md-7">
+            <h2 class="post-title">{{ $vote->title}}</h2>
             @if( $vote->description != "")
               <div class="col-md-10">
                 <p>{{ $vote->description}}</p>
               </div>
             @endif
           </div>
-          <div class="col-md-4">
-            <a class="btn btn-link text-muted" href=""><i class="fas fa-edit"></i> Edit</a>
-            <a class="btn btn-link text-muted" href=""><i class="fas fa-trash"></i> Delete</a>
+          <div class="col-md-5">
+            <a class="btn btn-link text-muted" href="{{ route('votes.show',['id' => $vote->id])}}"><i class="fas fa-edit"></i> View</a>
+            <a class="btn btn-link text-muted" href="{{ route('votes.edit',['id' => $vote->id])}}"><i class="fas fa-edit"></i> Edit</a>
+            <a class="btn btn-link text-muted" href="{{ route('votes.delete',['id' => $vote->id])}}"><i class="fas fa-trash"></i> Delete</a>
           </div>
         </div>
       </div>
