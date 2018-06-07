@@ -34,7 +34,13 @@
             <div class="row mb-5">
               <div class="col-md-5 mb-3">
                 <label for="date">Day</label>
-                <input type="text" class="form-control" data-date-format="dd/mm/yyyy" id="date" name="date" />
+                <div class="input-group">
+                  <input type="text" class="form-control datepicker" id="date" data-provide="datepicker">
+                  <div class="input-group-append">
+
+                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                  </div>
+                </div>
               </div>
 
               <div class="col-md-2 mb-3">

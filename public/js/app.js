@@ -1,9 +1,12 @@
 $(function() {
-
-  $(".date").datepicker({
+  $(".datepicker").datepicker({
     autoclose: true,
     todayHighlight: true
-  })
+  });
 
-  $('#date').datepicker("setDate", new Date());
+  $(".datepicker").datepicker({
+    format: "mm/dd/yyyy",
+    todayHighlight: true,
+    autoclose: true
+  });
 });
