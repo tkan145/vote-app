@@ -22,7 +22,7 @@
     @else
 
     @foreach( $votes as $vote)
-    <div class="col-md-10 bd-card">
+    <div class=" col-sm-12 col-md-10 bd-card">
       <div class="bd-card-body">
         <div class="row">
           <div class="col-md-7">
@@ -39,7 +39,7 @@
               </div>
             @endif
           </div>
-          <div class="col-md-5">
+          <div class="col-sm-12 col-md-5">
             <a class="btn btn-link text-muted" href="{{ route('votes.show',['id' => $vote->id])}}"><i class="fas fa-edit"></i> View</a>
             <a class="btn btn-link text-muted" href="{{ route('votes.edit',['id' => $vote->id])}}"><i class="fas fa-edit"></i> Edit</a>
             <a class="btn btn-link text-muted" href="{{ route('votes.delete',['id' => $vote->id])}}"><i class="fas fa-trash"></i> Delete</a>

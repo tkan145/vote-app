@@ -45,8 +45,16 @@ class VotesController extends Controller
             'status'        => 'Public',
         ]);
 
-        $vote->save();
+        $options = $request->options;
 
+        $test = $options[0];
+        // foreach($options as $option) {
+        //     echo '<script>';
+        //     echo 'console.log('. $option .')';
+        //     echo '</script>';
+        // }
+            
+        $vote->save();
         return redirect()->route('dashboard.index')->with("info", "A vote with ID: #$vote->vote_id has been created");
     }
 

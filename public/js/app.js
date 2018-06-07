@@ -32,5 +32,6 @@ $(function() {
       );
 
       $("div.form-group:first").after(description);
+      $(".btn-add-description").attr("disabled", "disabled");
     });
 });

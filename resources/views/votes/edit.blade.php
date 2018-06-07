@@ -9,28 +9,31 @@
     <div class="col-md-10 bd-card">
       <div class="bd-card-body">
 
-        <form class="needs-validation" action="{{ route('votes.create')}}" method="post">
+        <form id="create-form" class="needs-validation" action="{{ route('votes.create')}}" method="post">
             <div class="form-group">
               <label>Title</label>
               <div class="row">
                   <div class="col-md-8 mb-3">
-                      <input type="text" class="form-control" id="title" name="title" placeholder="" value="" required>
+                      <input type="text" class="form-control" id="title" name="title" placeholder="" value="{{$vote->title}}" required>
                   </div>
+                  @if($vote->description === "")
                   <div class="col-md-4 mb-3">
-                    <button type="button" class="btn btn-outline-primary">Add Description</button>
+                    <button type="button" class="btn btn-outline-primary btn-add-description">Add Description</button>
                   </div>
+                  @endif
                 </div>
             </div>
 
+            @if($vote->description != "")
             <div class="form-group">
               <label>Description</label>
               <div class="row">
                   <div class="col-md-8 mb-3">
-                      <input type="text" class="form-control" id="description" name="description" placeholder="" value="">
+                      <input type="text" class="form-control" id="description" name="description" placeholder="" value="{{$vote->description}}">
                   </div>
                 </div>
             </div>
-
+            @endif
             <div class="row mb-5">
               <div class="col-md-5 mb-3">
                 <label for="country">Day</label>
@@ -78,9 +81,21 @@
                         <input type="text" class="form-control" id="firstName" placeholder="" value="">
                     </div>
                     <div class="col-md-4 mb-3">
-                      <button type="button" class="btn btn-outline-primary">Add new option</button>
+                      <button type="button" class="btn btn-outline-primary btn-add-option">Add new option</button>
                     </div>
                 </div>
+            </div>
+
+            <!-- The option field template containing an option field and a Remove button -->
+            <div class="form-group d-none" id="optionTemplate">
+              <div class="row">
+                <div class="col-md-8 mb-3">
+                  <input type="text" class="form-control option-fields" name="options[]" id="" placeholder="" value="">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <button type="button" class="btn btn-danger btn-remove-option">Remove</button>
+                </div>
+              </div>
             </div>
 
             <hr class="mb-4">
