@@ -2,7 +2,7 @@
   @guest
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ url('/') }}" aria-label="PY">Vote System</a>
   @else
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ url('/admin') }}" aria-label="PY">Vote System</a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ url('/dashboard') }}" aria-label="PY">Vote System</a>
   @endguest
   <ul class="navbar-nav flex-row ml-md-auto d-md-flex d-none">
     <!-- Authentication Links -->
@@ -10,7 +10,7 @@
 
       <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
       <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-      
+
     @else
 
       <li class="nav-item dropdown">
@@ -24,12 +24,14 @@
           <span class="caret ml-2"></span>{{ Auth::user()->name }}
         </div>
         <div class="dropdown-divider c-blue"></div>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();">
-            {{ __('Sign out') }}
-          </a>
+        <a class="dropdown-item" href="">Profile</a>
+        <a class="dropdown-item" href="">About</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{{ route('logout') }}"
+          onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+          {{ __('Sign out') }}
+        </a>
 
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
@@ -38,6 +40,6 @@
       </li>
 
     @endguest
-    
+
   </ul>
 </nav>

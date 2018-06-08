@@ -16,7 +16,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/create-vote">
+      <a class="nav-link" href="/dashboard/archive">
         <span data-feather="home"></span>
         Archive <span class="sr-only">(current)</span>
       </a>
