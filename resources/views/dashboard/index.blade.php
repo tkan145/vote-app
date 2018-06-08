@@ -30,6 +30,8 @@
               <span class="badge badge-success h6">Public</span>
             @elseif($vote->status == 'Private')
               <span class="badge badge-secondary h6">Private</span>
+            @elseif($vote->status == 'Archive')
+              <span class="badge badge-warning h6">Archive</span>
             @endif
             <h2 class="post-title">{{ $vote->title}}</h2>
 
@@ -40,9 +42,9 @@
             @endif
           </div>
           <div class="col-sm-12 col-md-5">
-            <a class="btn btn-link text-muted" href="{{ route('votes.show',['id' => $vote->id])}}"><i class="fas fa-edit"></i> View</a>
-            <a class="btn btn-link text-muted" href="{{ route('votes.edit',['id' => $vote->id])}}"><i class="fas fa-edit"></i> Edit</a>
-            <a class="btn btn-link text-muted" href="{{ route('votes.delete',['id' => $vote->id])}}"><i class="fas fa-trash"></i> Delete</a>
+            <a class="btn btn-link text-muted" href="{{ route('votes.show',['uuid' => $vote->uuid])}}"><i class="fas fa-edit"></i> View</a>
+            <a class="btn btn-link text-muted" href="{{ route('votes.edit',['uuid' => $vote->uuid])}}"><i class="fas fa-edit"></i> Edit</a>
+            <a class="btn btn-link text-muted" href="{{ route('votes.delete',['uuid' => $vote->uuid])}}"><i class="fas fa-trash"></i> Delete</a>
           </div>
         </div>
       </div>
