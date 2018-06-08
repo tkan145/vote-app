@@ -9,7 +9,8 @@
     <div class="col-md-10 bd-card">
       <div class="bd-card-body">
 
-        <form id="create-form" class="needs-validation" action="{{ route('votes.create')}}" method="post">
+        <form id="create-form" class="needs-validation row" action="{{ route('votes.update')}}" method="post">
+            <div class="col-md-9">
             <div class="form-group">
               <label>Title</label>
               <div class="row">
@@ -103,11 +104,27 @@
               <h4>Upload attachments</h4>
               <input type="file" class="form-control-file" id="exampleFormControlFile1">
             </div>
+            </div>
+            <div class="col-md-2">
+              <div class="">
+                <h4>Visibility</h4>
+                <div class="form-group">
+                  <select class="form-control" id="status" name="status">
+                    <option value="Public">Public</option>
+                    <option value="Private">Private</option>
+                    <option value="Archive">Archive</option>
+                  </select>
+                </div>
+              </div>
+            </div>
             {{ csrf_field() }}
+            <input type="hidden" name="uuid" value="{{ $vote_uuid }}">
+            <a>{{$vote_uuid}}qweq</a>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>
   </div>
+
 </div>
 
 @endsection
